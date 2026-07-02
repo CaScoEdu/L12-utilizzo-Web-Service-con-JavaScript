@@ -1,0 +1,97 @@
+/* --- REGONE GENERALI E RESET --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #fcf8f5; /* Un bianco caldo che ricorda la farina/impasto */
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+/* --- HEADER --- */
+header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 20px 0;
+    border-bottom: 2px dashed #e67e22; /* Linea tratteggiata color arancio/mattone */
+}
+
+header h1 {
+    font-size: 2.5rem;
+    color: #d35400; /* Rosso mattone tipico dei forni a legna */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+header img {
+    margin-top: 15px;
+    max-width: 150px;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* --- CONTENITORE PRINCIPALE (GRID) --- */
+#LISTA_PIZZE {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* --- SCHEDA DELLA PIZZA (CARD) --- */
+.pizza-card {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    padding: 20px;
+    border-top: 5px solid #e74c3c; /* Bordo rosso stile pomodoro */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Effetto zoom quando passi il mouse sopra la pizza */
+.pizza-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.pizza-nome {
+    font-size: 1.3rem;
+    color: #2c3e50;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.pizza-ingredienti {
+    font-size: 0.95rem;
+    color: #7f8c8d;
+    font-style: italic;
+    margin-bottom: 15px;
+    flex-grow: 1; /* Spinge il prezzo sempre in fondo alla card */
+}
+
+.pizza-prezzo {
+    font-size: 1.2rem;
+    color: #27ae60; /* Verde brillante per il prezzo */
+    font-weight: bold;
+    text-align: right;
+    border-top: 1px solid #f1f2f6;
+    padding-top: 10px;
+}
+
+/* --- MESSAGGIO DI ERRORE O CARICAMENTO --- */
+.status-messaggio {
+    grid-column: 1 / -1;
+    text-align: center;
+    font-size: 1.2rem;
+    color: #7f8c8d;
+    padding: 40px;
+}
